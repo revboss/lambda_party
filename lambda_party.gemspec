@@ -6,7 +6,7 @@ require "lambda_party/version"
 Gem::Specification.new do |spec|
   spec.name          = "lambda_party"
   spec.version       = LambdaParty::VERSION
-  spec.authors       = "Michael Novi"
+  spec.authors       = "Michael Novi, Michael Percuoco"
   spec.email         = "mike@revboss.com"
 
   spec.summary       = %q{A gem that extends HTTParty to provide AWS Sigv4 signing to requests.}

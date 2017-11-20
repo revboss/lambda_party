@@ -2,7 +2,8 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lambda_party`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+LambdaParty is an extension of HTTParty with use for making signed request to AWS
+
 
 ## Installation
 
@@ -22,7 +23,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In the class you will be making the http request call you will include
+LambdaParty and define the class variables necessary for your AWS signing example.
+To make a call you will use LambdaParty.get (url) (or other appropriate http verb)
+
+	class Requester
+		include LambdaParty
+			LambdaParty.aws_key 'key'
+			LambdaParty.aws_secret 'secret'
+			LambdaParty.aws_region 'us-east-1'
+			LambdaParty.aws_service 'execute-api'
+
+			#rest of your code here
+		def request
+			LambdaParty.get("http://request-url.com/id/3")
+		end
+	end
 
 ## Development
 
