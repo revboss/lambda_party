@@ -1,6 +1,3 @@
-require 'pry'
-require "lambda_party/request"
-
 RSpec.describe LambdaParty do
   before do
      LambdaParty.base_uri 'https://f7hewjhtv8.execute-api.us-east-1.amazonaws.com/staging/organization/1/contact/2'
