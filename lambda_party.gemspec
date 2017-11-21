@@ -6,13 +6,13 @@ require "lambda_party/version"
 Gem::Specification.new do |spec|
   spec.name          = "lambda_party"
   spec.version       = LambdaParty::VERSION
-  spec.authors       = "Michael Novi"
+  spec.authors       = ["Michael Percuoco"]
   spec.email         = "mike@revboss.com"
 
   spec.summary       = %q{A gem that extends HTTParty to provide AWS Sigv4 signing to requests.}
   spec.description   = %q{A gem that extends HTTParty to provide AWS Sigv4 signing to requests.}
   spec.homepage      = "https://github.com/mikenovi/lmabda_party"
-  spec.license       = "MIT"
+  spec.licenses       = ["MIT"]
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
