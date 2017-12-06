@@ -84,14 +84,14 @@ module LambdaParty
 
   def self.process_aws_headers(options, http_method, path)
     http_verb = get_http_verb(http_method)
-    aws_headers = get_aws_headers(http_verb, path)
+    aws_headers = get_aws_headers(http_verb, path, options[:body])
     options[:headers] = options[:headers].nil? ? aws_headers : options[:headers].merge(aws_headers)
     if options[:headers] && (headers.any?)
       options[:headers] = headers.merge(options[:headers])
     end
   end
 
-  def self.get_aws_headers(http_method, url)
+  def self.get_aws_headers(http_method, url, body=nil)
     if aws_key && aws_secret
       signer = Aws::Sigv4::Signer.new(
         service: aws_service,
@@ -110,6 +110,7 @@ module LambdaParty
     end
     signature = signer.sign_request(
       http_method: http_method,
+      body: body.to_s,
       url: url
     )
     return signature.headers

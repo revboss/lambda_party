@@ -8,3 +8,4 @@ gemspec
 gem 'httparty', '~> 0.15.6'
 gem 'aws-sigv4', '~> 1.0.0'
 gem 'aws-sdk', '~> 3'
+gem 'pry'

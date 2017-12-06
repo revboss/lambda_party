@@ -1,8 +1,9 @@
+require 'pry'
 RSpec.describe LambdaParty do
   before do
-     LambdaParty.base_uri 'https://f7hewjhtv8.execute-api.us-east-1.amazonaws.com/staging/organization/1/contact/2'
-     LambdaParty.aws_key 'AKIAI4I3UZYXF22JIMRQ'
-     LambdaParty.aws_secret 'gjwA8w8X5g8/TSO5burdM5tTUJ743MSrmzw6KnMp'
+     LambdaParty.base_uri 'https://api_gatewau_url'
+     LambdaParty.aws_key 'your_key'
+     LambdaParty.aws_secret 'your-secrety'
      LambdaParty.aws_region 'us-east-1'
      LambdaParty.aws_service 'execute-api'
      LambdaParty.aws_credentials_provider Aws::InstanceProfileCredentials
@@ -23,6 +24,8 @@ RSpec.describe LambdaParty do
     expect(LambdaParty::VERSION).not_to be nil
   end
 
+  it "binds here so I can test" do
+  end
 
   it "calls aws sigv4 signer with appropriate params from class variables" do
      signature = double("Aws::Sigv4::Signer")
